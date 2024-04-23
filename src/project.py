@@ -60,11 +60,11 @@ def handle_events():
       if event.key == pygame.K_2:
         brush_color = (255, 255, 255)
       if event.key == pygame.K_3:
-        brush_color = (255, 0, 0)
+        brush_color = (210, 0, 0)
       if event.key == pygame.K_4:
-        brush_color = (0, 255, 0)
+        brush_color = (0, 210, 0)
       if event.key == pygame.K_5:
-        brush_color = (0, 0, 255)
+        brush_color = (0, 0, 210)
       if event.key == pygame.K_6:
         DEFAULT_BG = (255, 255, 255)
         canvas.fill(DEFAULT_BG)
@@ -72,17 +72,19 @@ def handle_events():
         DEFAULT_BG = (0, 0, 0)
         canvas.fill(DEFAULT_BG)
       if event.key == pygame.K_8:
-        DEFAULT_BG = (255, 0, 0)
+        DEFAULT_BG = (210, 0, 0)
         canvas.fill(DEFAULT_BG)
       if event.key == pygame.K_9:
-        DEFAULT_BG = (0, 255, 0)
+        DEFAULT_BG = (0, 210, 0)
         canvas.fill(DEFAULT_BG)
       if event.key == pygame.K_0:
-        DEFAULT_BG = (0, 0, 255)
+        DEFAULT_BG = (0, 0, 210)
         canvas.fill(DEFAULT_BG)
 
-def display_details():
-  1
+def frame():
+  global brush_size, brush_color
+  pygame.draw.rect(screen, brush_color, (0, 0, SCREEN_WIDTH - 0, SCREEN_HEIGHT - 0), 40)
+
 
 def main():
   global brush_size, brush_color
@@ -90,11 +92,11 @@ def main():
 
   while True:
     handle_events()
+
     
 
     screen.blit(canvas, (0, 0))
-    pygame.draw.rect(screen, brush_color, (0, 0, SCREEN_WIDTH - 0, SCREEN_HEIGHT - 0), 40)
-
+    frame()
     pygame.display.flip()
 
 
