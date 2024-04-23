@@ -27,6 +27,8 @@ last_pos = None
 brush_size = DEFAULT_BRUSH_SIZE
 brush_color = DEFAULT_BRUSH_COLOR
 
+font = pygame.font.Font(None, 36)
+
 
 def draw_line(start, end, color, thickness):
   pygame.draw.line(canvas, color, start, end, thickness)
@@ -88,9 +90,10 @@ def main():
 
   while True:
     handle_events()
+    
 
     screen.blit(canvas, (0, 0))
-
+    pygame.draw.rect(screen, brush_color, (0, 0, SCREEN_WIDTH - 0, SCREEN_HEIGHT - 0), 40)
 
     pygame.display.flip()
 
