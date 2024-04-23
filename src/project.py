@@ -11,10 +11,11 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 DEFAULT_BRUSH_SIZE = 5
 DEFAULT_BRUSH_COLOR = BLACK
+DEFAULT_BG = (255, 255, 255)
 
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Digital Drawing Pad")
+pygame.display.set_caption("SketchBook")
 
 
 canvas = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -51,8 +52,35 @@ def handle_events():
         last_pos = current_pos
     elif event.type == pygame.KEYDOWN:
       if event.key == pygame.K_c:
-        canvas.fill(WHITE)
+        canvas.fill(DEFAULT_BG)
+      if event.key == pygame.K_1:
+        brush_color = (0, 0, 0)
+      if event.key == pygame.K_2:
+        brush_color = (255, 255, 255)
+      if event.key == pygame.K_3:
+        brush_color = (255, 0, 0)
+      if event.key == pygame.K_4:
+        brush_color = (0, 255, 0)
+      if event.key == pygame.K_5:
+        brush_color = (0, 0, 255)
+      if event.key == pygame.K_6:
+        DEFAULT_BG = (255, 255, 255)
+        canvas.fill(DEFAULT_BG)
+      if event.key == pygame.K_7:
+        DEFAULT_BG = (0, 0, 0)
+        canvas.fill(DEFAULT_BG)
+      if event.key == pygame.K_8:
+        DEFAULT_BG = (255, 0, 0)
+        canvas.fill(DEFAULT_BG)
+      if event.key == pygame.K_9:
+        DEFAULT_BG = (0, 255, 0)
+        canvas.fill(DEFAULT_BG)
+      if event.key == pygame.K_0:
+        DEFAULT_BG = (0, 0, 255)
+        canvas.fill(DEFAULT_BG)
 
+def display_details():
+  1
 
 def main():
   global brush_size, brush_color
@@ -60,7 +88,6 @@ def main():
 
   while True:
     handle_events()
-
 
     screen.blit(canvas, (0, 0))
 
