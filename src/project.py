@@ -5,8 +5,8 @@ import sys
 pygame.init()
 
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1366
+SCREEN_HEIGHT = 768
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 DEFAULT_BRUSH_SIZE = 5
@@ -54,6 +54,8 @@ def handle_events():
         last_pos = current_pos
     elif event.type == pygame.KEYDOWN:
       if event.key == pygame.K_c:
+        DEFAULT_BG = (255, 255, 255)
+        brush_color = (0, 0, 0)
         canvas.fill(DEFAULT_BG)
       if event.key == pygame.K_1:
         brush_color = (0, 0, 0)
