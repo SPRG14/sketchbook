@@ -4,7 +4,7 @@
 Demo Video: <URL>
 
 ## GitHub Repository
-GitHub Repo: [<URL>](https://github.com/SPRG14/sketchbook.git)
+GitHub Repo: [[<URL>](https://github.com/SPRG14/sketchbook.git)](https://github.com/SPRG14/sketchbook.git)
 
 ## Description
 Sketchbook is a simple yet powerful program that allows the user to unleash their creativity by sketching digitally. With multiple drawing tools and a customizable canvas, users can create artworks from doodles and sketches to detailed pieces.
