@@ -9,9 +9,10 @@ SCREEN_WIDTH = 1366
 SCREEN_HEIGHT = 768
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-DEFAULT_BRUSH_SIZE = 5
+DEFAULT_BRUSH_SIZE = 3
 DEFAULT_BRUSH_COLOR = BLACK
 DEFAULT_BG = (255, 255, 255)
+P_tool = 1
 
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -31,11 +32,14 @@ font = pygame.font.Font(None, 36)
 
 
 def draw_line(start, end, color, thickness):
-  pygame.draw.line(canvas, color, start, end, thickness)
+  if P_tool == 1:
+    pygame.draw.line(canvas, color, start, end, thickness)
+  else:
+    pygame.draw.aaline(canvas, color, start, end, thickness)    
 
 
 def handle_events():
-  global drawing, last_pos, brush_size, brush_color
+  global drawing, last_pos, brush_size, brush_color, P_tool
 
 
   for event in pygame.event.get():
@@ -82,6 +86,10 @@ def handle_events():
       if event.key == pygame.K_0:
         DEFAULT_BG = (0, 0, 210)
         canvas.fill(DEFAULT_BG)
+      if event.key == pygame.K_p:
+        P_tool = 1
+      if event.key == pygame.K_s:
+        P_tool = 2
 
 def frame():
   global brush_size, brush_color
@@ -94,8 +102,6 @@ def main():
 
   while True:
     handle_events()
-
-    
 
     screen.blit(canvas, (0, 0))
     frame()
