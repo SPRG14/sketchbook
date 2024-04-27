@@ -13,7 +13,7 @@ Sketchbook is a simple yet powerful program that allows the user to unleash thei
 
 1. Ability to draw around the canvas with the mouse
 2. You can reset the canvas
-3. You can change the brush color
+3. You can change the tool color
 4. You can change the canvas color
 
 ### How to use: 
@@ -24,11 +24,11 @@ Press the "p" key for the pen tool
 
 Press the following keys for color changes:
 
-1: Black brush color
-2: White brush color
-3: Red brush color
-4: Green brush color
-5: Blue brush color
+1: Black tool color
+2: White tool color
+3: Red tool color
+4: Green tool color
+5: Blue tool color
 6: White canvas color
 7: Black canvas color
 8: Red canvas color
