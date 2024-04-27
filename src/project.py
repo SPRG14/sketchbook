@@ -4,7 +4,7 @@ import sys
 
 pygame.init()
 
-
+# Initial Variables
 SCREEN_WIDTH = 1366
 SCREEN_HEIGHT = 768
 WHITE = (255, 255, 255)
@@ -14,30 +14,28 @@ DEFAULT_BRUSH_COLOR = BLACK
 DEFAULT_BG = (255, 255, 255)
 P_tool = 1
 
-
+# Screen set-up
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("SketchBook")
 
-
+# Canvas set-up
 canvas = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
 canvas.fill(WHITE)
 
-
+# Drawing variables
 drawing = False
 last_pos = None
 brush_size = DEFAULT_BRUSH_SIZE
 brush_color = DEFAULT_BRUSH_COLOR
 
-font = pygame.font.Font(None, 36)
-
-
+# Line Drawing Function 
 def draw_line(start, end, color, thickness):
   if P_tool == 1:
     pygame.draw.line(canvas, color, start, end, thickness)
   else:
     pygame.draw.aaline(canvas, color, start, end, thickness)    
 
-
+# Function for handling mouse clicks and keyboard input
 def handle_events():
   global drawing, last_pos, brush_size, brush_color, P_tool
 
@@ -91,11 +89,12 @@ def handle_events():
       if event.key == pygame.K_s:
         P_tool = 2
 
+# Function to draw frame
 def frame():
   global brush_size, brush_color
   pygame.draw.rect(screen, brush_color, (0, 0, SCREEN_WIDTH - 0, SCREEN_HEIGHT - 0), 40)
 
-
+# Main loop
 def main():
   global brush_size, brush_color
 
@@ -108,6 +107,7 @@ def main():
     pygame.display.flip()
 
 
+# Call the main function
 if __name__ == "__main__":
   main()
 
