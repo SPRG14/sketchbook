@@ -1,7 +1,7 @@
 # SketchBook
 
 ## Demo
-Demo Video: <URL>
+Demo Video: [<URL>](https://youtu.be/4psFVOxsgZA)
 
 ## GitHub Repository
 GitHub Repo: [[<URL>](https://github.com/SPRG14/sketchbook.git)](https://github.com/SPRG14/sketchbook.git)
